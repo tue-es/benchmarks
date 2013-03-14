@@ -4,6 +4,6 @@ SET(GAU_SRC_LIST
 
 add_kernel_exe(yuv2rgb ${GAU_SRC_LIST})
 
-#configure_file(data/lenna.pgm ${CMAKE_CURRENT_BINARY_DIR}/data/lenna.pgm COPYONLY)
-#configure_file(run.sh ${CMAKE_CURRENT_BINARY_DIR}/run.sh COPYONLY)
+configure_file(dmem/yuv2rgb.dmem_init ${CMAKE_CURRENT_BINARY_DIR}/dmem/yuv2rgb.dmem_init COPYONLY)
+configure_file(run.sh ${CMAKE_CURRENT_BINARY_DIR}/run.sh COPYONLY)
 
