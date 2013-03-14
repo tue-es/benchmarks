@@ -38,9 +38,9 @@ void FreeDmemSections(dmem_section_t* secs, int n) {
 }
 
 void DumpDmemSection(FILE* fp, dmem_section_t sec) {
-    int i, n = (sec.size + sizeof(unsigned char)/2)/sizeof(unsigned char);
+    int i, n = (sec.size + sizeof(int)/2)/sizeof(int);
     fprintf(fp, "@%x\n", sec.start);
     for (i = 0; i < n; ++i) {
-        fprintf(fp, "%02x\n", sec.buff[i]);
+        fprintf(fp, "%08x\n", sec.buff[i]);
     }
 }

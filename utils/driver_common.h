@@ -10,7 +10,7 @@
 typedef struct _dmem_section {
     int start;
     int size;
-    unsigned char* buff;
+    int* buff;
 } dmem_section_t;
 
 dmem_section_t* ReadDmemInitFile(char fname[], int sec_size[], int n);
