@@ -1,3 +1,4 @@
+#include <stdlib.h>
 
 void
 gaussian5x5int(unsigned char * out, unsigned char * in, int w, int h) {
