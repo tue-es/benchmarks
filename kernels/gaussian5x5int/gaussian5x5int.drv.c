@@ -1,51 +1,42 @@
-#include "driver_common.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "pgm.h"
 
 int  dmem_sec_num = 1;
 int  dmem_sec_size[1];
 
 int main(int argc, char* argv[]) {
 
-    if (argc != 4) {
-        ARGC_ERROR(3);
-        return -1;
-    }
+  if(argc!=3){
+    printf("Usage: gaussian5x5int input.pgm output.pgm\n");
+    return -1;
+  }
 
-    int w;
-    int h;
+  // pointer to the input image 
+  unsigned char *image_in;
+  // pointer to the output image 
+  unsigned char *image_out;
+  // image width (original width without padding)
+  int w;
+  // image height (original height without padding)
+  int h;
+  // max gray value of the PGM, usually it is 255.
+  int grayMax;
 
-    printf("Openning meta file\n");
-    FILE* meta = fopen(argv[2],"r");
-    fscanf(meta,"%d",&w);
-    fscanf(meta,"%d",&h);
-    fclose(meta);
+  readPGM(&image_in, argv[1], &w, &h, &grayMax);
 
-    printf("Image Width: %d\n",w);
-    printf("Image Height: %d\n",h);
+  printf("Image File Name: %s\n",argv[1]);
+  printf("Image Width: %d\n",w);
+  printf("Image Height: %d\n",h);
 
-    dmem_sec_size[0] = w*(h+4)*sizeof(unsigned char);
+  image_out=(unsigned char*)malloc(w*h*sizeof(unsigned char));
 
-    /* input secttion */
-    dmem_section_t* secs
-        = ReadDmemInitFile(argv[1], dmem_sec_size, dmem_sec_num);
-    int n = secs[0].size/sizeof(unsigned char);
+  gaussian5x5int((unsigned char*)image_out, (unsigned char*)image_in, w, h);
 
-    /* output section */
-    dmem_section_t out_sec;
-    out_sec.start = 0;
-    out_sec.size  = n*sizeof(unsigned char);
-    out_sec.buff  = malloc(out_sec.size);
+  writePGM(image_out, argv[2], w, h, grayMax);
 
-    /* section for temporary working set */
-    dmem_section_t tmp_sec;
-    tmp_sec.start = secs[0].start+secs[0].size;
-    tmp_sec.size  = n*sizeof(unsigned char);
-    tmp_sec.buff  = malloc(tmp_sec.size);
-    
-    gaussian5x5int((unsigned char*)out_sec.buff, (unsigned char*)tmp_sec.buff, (unsigned char*)secs[0].buff, w, h);
-    FreeDmemSections(secs, dmem_sec_num);
-    FILE* ofp = fopen(argv[3], "w");
-    DumpDmemSection(ofp, out_sec);
-    fclose(ofp);
-    free(out_sec.buff);
-    return 0;
+  free(image_in);
+  free(image_out);
+
+  return 0;
 }

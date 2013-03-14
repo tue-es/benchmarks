@@ -1,8 +1,12 @@
 
 void
-gaussian5x5int(unsigned char * out, unsigned char * tmp, unsigned char * in, int w, int h) {
+gaussian5x5int(unsigned char * out, unsigned char * in, int w, int h) {
 
   int i, j, k;
+  /* temperary image */
+  unsigned char* tmp;
+
+  tmp = (unsigned char *)malloc(w*h*sizeof(unsigned char));
 
   /* float point verion */
   /* float coef[5] = {0.061, 0.242, 0.383, 0.242, 0.061}; */
@@ -45,5 +49,6 @@ gaussian5x5int(unsigned char * out, unsigned char * tmp, unsigned char * in, int
     }
   }
 
+  free(tmp);
 
 }
