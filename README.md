@@ -12,6 +12,11 @@ The following web pages contains the up-to-date information of this benchmark:
 *   [Documentation](https://github.com/tue-es/benchmarks/wiki/documentation "Documentation")
 *   [Publications](https://github.com/tue-es/benchmarks/wiki/publications "Publications")
 
+## Prerequisite ##
+This code has been tested under Linux, but is intended to be cross-platform. Additionally, cmake is used to configure the compilation script. In short, what you need is:
+* Linux (or Linux-like) system
+* cmake (version 2.6 or higher)
+
 ## Quick Start ##
 For a quick start, below is a short description to compile and run the benchmark.
 
