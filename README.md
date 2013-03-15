@@ -1,4 +1,6 @@
 # Image Processing and Computer Vision Benchmarks #
+
+## About ##
 The benchmark is hosted at
 [https://github.com/tue-es/benchmarks](https://github.com/tue-es/benchmarks)
 
@@ -9,6 +11,7 @@ The following web pages contains the up-to-date information of this benchmark:
 *   [Documentation](https://github.com/tue-es/benchmarks/wiki/documentation "Documentation")
 *   [Publications](https://github.com/tue-es/benchmarks/wiki/publications "Publications")
 
+## Quick Start ##
 For a quick start, below is a short description to compile and run the benchmark.
 
 To obtain the source code, you can clone the repository or download and unzip the package. 
