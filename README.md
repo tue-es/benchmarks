@@ -32,5 +32,5 @@ make run-kernel
 
 If the tests do not report error, you should be able to find the output within the directory of each kernel. For example, the output of the gaussian filter is
 <pre>
-benchmarks/build/kernels/gaussian5x5int/out.pgm
+build/kernels/gaussian5x5int/out.pgm
 </pre>
