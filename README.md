@@ -29,8 +29,9 @@ mkdir build
 cd build
 cmake ..
 </pre>
+If no error is thrown out, then will be a "Makefile" generated within the build directory.
 
-After that, you can compile the code and the run some tests by the commands below.
+After that, in the build directory (when the Makefile is generated earlier), you can issue the following comamnd to compile the code and the run the tests.
 <pre>
 make
 make run-kernel
