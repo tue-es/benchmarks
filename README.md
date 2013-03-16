@@ -4,7 +4,7 @@
 The benchmark is hosted at
 [https://github.com/tue-es/benchmarks](https://github.com/tue-es/benchmarks)
 
-The following web pages contains the up-to-date information of this benchmark:
+The following web pages contain the up-to-date information of this benchmark:
 *   [Overview](https://github.com/tue-es/benchmarks/wiki/overview "Overview")
 *   [People](https://github.com/tue-es/benchmarks/wiki/people "People")
 *   [License](https://github.com/tue-es/benchmarks/wiki/license "License")
