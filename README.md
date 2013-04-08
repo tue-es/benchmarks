@@ -34,7 +34,7 @@ If no error is thrown out, then will be a "Makefile" generated within the build 
 After that, in the build directory (when the Makefile is generated earlier), you can issue the following comamnd to compile the code and the run the tests.
 <pre>
 make
-make run-kernel
+make run
 </pre>
 
 If the tests do not report error, you should be able to find the output within the directory of each kernel. For example, the output of the gaussian filter is
