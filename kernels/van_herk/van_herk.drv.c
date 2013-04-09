@@ -11,6 +11,12 @@
  *
  */
 
+/***************************************************************
+ * Original paper of M. van herk:
+ * A fast algorithm for local minimum and maximum filters on rectangular and octagonal kernels
+ * in Pattern Recognition Letters 1992
+ * http://dx.doi.org/10.1016/0167-8655(92)90069-C
+ **************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
