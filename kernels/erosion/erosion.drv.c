@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 
   image_out=(unsigned char*)malloc(w*h*sizeof(unsigned char));
 
-  erosion((unsigned char*)image_in, w, h, (unsigned char*)image_out, 3);
+  erosion((unsigned char*)image_in, w, h, (unsigned char*)image_out, 2);
 
   writePGM(image_out, argv[2], w, h, grayMax);
 

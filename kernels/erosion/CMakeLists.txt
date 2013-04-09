@@ -8,6 +8,6 @@ ADD_CUSTOM_TARGET(run-erosion erosion
   ${CMAKE_CURRENT_SOURCE_DIR}/data/lenna.pgm
   ${CMAKE_CURRENT_BINARY_DIR}/out.pgm
   DEPENDS erosion
-  COMMENT "Running erosion 3x3 filter kernel")
+  COMMENT "Running erosion 5x5 filter kernel")
 
 ADD_DEPENDENCIES(run-kernel run-erosion)
